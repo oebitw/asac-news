@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modulus.css">
+</head>
+
+<body>
+
+    <header>
+
+
+        <a href="/">
+            <h1> ASAC News </h1>
+        </a>
+
+        <nav>
+
+            <form action="/news" method="">
+                <input type="text" name="keyword" placeholder="Search For News" required>
+                <input type="submit" value="Search" class="pointer">
+            </form>
+
+
+        </nav>
+
+
+
+    </header>
+
+
+    <main>
+
+
+
+
+        <% news.forEach(correctData=>{ %>
+            <section class="container">
+                <h2>
+                    <%= correctData.title %>
+                </h2>
+
+                <section id="img-section">
+                    <img src="<%= correctData.img %>" alt="">
+                </section>
+
+                <h3>
+                    <%= correctData.description %>
+                </h3>
+
+                <a href="<%= correctData.url %>"> READ the Article </a>
+
+                <p class="p1">
+                    Published on: <%= correctData.date%>
+                </p>
+
+                <p class="p2">
+                    Source: <%= correctData.source%>
+                </p>
+
+            </section>
+
+            <% }); %>
+
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+</body>
+
+</html>
